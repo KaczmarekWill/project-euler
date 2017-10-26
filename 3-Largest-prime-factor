@@ -1,0 +1,25 @@
+let n = 600851475143;
+let primes = [];
+let largestPrime = 0;
+
+while (n % 2 == 0) {
+  n /= 2;
+  primes.push(2);
+}
+
+for (i = 3; i <= Math.sqrt(n); i+=2) {
+  while (n%i == 0) {
+    n /= i;
+    primes.push(i);
+  }
+}
+
+if (n > 2) {
+  primes.push(n);
+}
+
+print(primes);
+
+largestPrime = primes[primes.length - 1];
+
+print(largestPrime);
